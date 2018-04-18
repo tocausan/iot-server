@@ -5,7 +5,6 @@ import * as webSocket from 'ws';
 import {Config} from "../config";
 import {Benchmark} from "./Benchmark";
 import WebSocket = require("ws");
-import {Host} from "./Host";
 import {WebSocketMessage} from "./WebSocketMessage";
 
 const benchmark: Benchmark = new Benchmark('WebSocketServer');

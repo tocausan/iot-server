@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./build/app",
-    "forever:start": "forever start ./build/app.js",
-    "forever:stop": "forever stop ./build/app",
-    "start": "node ./build/app",
+    "pm2:start": "pm2 start ./build/app.js",
+    "pm2:stop": "pm2 stop ./build/app.js",
     "build": "rimraf /build && gulp",
     "dev": "concurrently --kill-others 'npm run build' 'nodemon'",
     "test": "jshint hello.js"
@@ -51,7 +50,6 @@
     "app-root-path": "^2.0.1",
     "clean-webpack-plugin": "^0.1.19",
     "concurrently": "^3.5.1",
-    "forever": "^0.15.3",
     "google-auth-library": "^1.4.0",
     "googleapis": "^27.0.0",
     "gulp": "^3.9.1",
@@ -64,6 +62,7 @@
     "jshint": "^2.9.5",
     "nodemailer": "^4.6.4",
     "nodemon": "^1.17.3",
+    "pm2": "^2.10.2",
     "process": "^0.11.10",
     "rimraf": "^2.6.2",
     "shelljs": "^0.8.1",

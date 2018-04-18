@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./build/app",
-    "forever:start": "forever start ./build/app",
+    "forever:start": "forever start ./build/app.js",
     "forever:stop": "forever stop ./build/app",
     "start": "node ./build/app",
     "build": "rimraf /build && gulp",

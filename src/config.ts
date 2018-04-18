@@ -3,17 +3,19 @@
 import * as path from "path";
 import {Benchmark} from "./models";
 
+console.log(process.env.PROD);
+
 const Config = {
     title: process.env.TITLE || 'iot-server',
-    environment: process.env.PROD || 'dev',
+    environment: process.env.PROD === 'true' ? 'prod' : 'dev',
     host: {
         ip: process.env.HOST_IP || '127.0.0.1',
     },
     http: {
-        port: parseInt(process.env.HTTP_PORT) || 3000
+        port: process.env.PROD === 'true' ? 80 : 3000
     },
     socket: {
-        port: parseInt(process.env.SOCKET_PORT) || 3100
+        port: process.env.PROD === 'true' ? 443 : 3100
     },
     path: {
         public: path.join(__dirname, '/public')

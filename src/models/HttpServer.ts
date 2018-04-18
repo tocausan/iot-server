@@ -19,7 +19,7 @@ export class HttpServer {
     public address: string;
 
     constructor() {
-        this.port = parseInt(process.env.PORT) || Config.http.port;
+        this.port = Config.http.port;
         this.address = 'http://' + Config.host.ip + ':' + this.port;
         benchmark.pushLine('host', this.address, true);
         this.testServer()

@@ -5,8 +5,6 @@ import {HttpServer, WebSocketMessage, WebSocketServer} from "./models";
 import moment = require("moment");
 import {Config} from "./config";
 
-process.title = Config.title;
-
 const webServer = new HttpServer().create(),
     webSocketServer = new WebSocketServer().create(exec);
 

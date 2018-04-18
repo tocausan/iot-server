@@ -7,25 +7,25 @@
     "pm2:start": "pm2 start ./build/app.js",
     "pm2:stop": "pm2 stop ./build/app.js",
     "build": "rimraf /build && gulp",
-    "dev": "concurrently --kill-others 'npm run build' 'nodemon'",
-    "test": "jshint hello.js"
+    "dev": "concurrently --kill-others 'npm run build' 'nodemon'"
   },
   "description": "IoT server for connected assets",
   "main": "./build/app",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/tocausan/pi-security.git"
+    "url": "git+ssh://git@github.com/tocausan/iot-server.git"
   },
   "keywords": [
     "expressjs",
-    "typescript"
+    "typescript",
+    "iot"
   ],
   "author": "tocausan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tocausan/pi-security/issues"
+    "url": "https://github.com/tocausan/iot-server/issues"
   },
-  "homepage": "https://github.com/tocausan/pi-security#readme",
+  "homepage": "https://github.com/tocausan/iot-server#readme",
   "dependencies": {
     "@types/ws": "^4.0.2",
     "cookie-parser": "^1.4.3",

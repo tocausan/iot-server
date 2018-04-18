@@ -51,12 +51,12 @@ gulp.task('media', () => {
 
 gulp.task('default', ['compile', 'template', 'style', 'media'], () => {
 
-    /*
+
     gulp.watch(path.src + '/**', () => {
         gulp.run('compile');
         gulp.run('template');
         gulp.run('style');
         gulp.run('media');
     });
-    */
+
 });

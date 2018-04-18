@@ -8,7 +8,7 @@
     "pm2:restart": "pm2 restart ./build/app.js",
     "pm2:stop": "pm2 stop ./build/app.js",
     "build": "rimraf /build && gulp",
-    "dev": "concurrently --kill-others 'npm run build' 'nodemon'"
+    "dev": "concurrently --kill-others 'rimraf /build && gulp --env dev' 'nodemon'"
   },
   "description": "IoT server for connected assets",
   "main": "./build/app",

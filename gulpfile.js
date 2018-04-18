@@ -1,6 +1,7 @@
 'use strict';
 
 const gulp = require('gulp'),
+    gutil = require('gulp-util'),
     ignore = require('gulp-ignore'),
     refresh = require('gulp-livereload'),
     lr = require('tiny-lr'),
@@ -50,13 +51,12 @@ gulp.task('media', () => {
 });
 
 gulp.task('default', ['compile', 'template', 'style', 'media'], () => {
-
-
-    gulp.watch(path.src + '/**', () => {
-        gulp.run('compile');
-        gulp.run('template');
-        gulp.run('style');
-        gulp.run('media');
-    });
-
+    if (gutil.env.env === 'dev') {
+        gulp.watch(path.src + '/**', () => {
+            gulp.run('compile');
+            gulp.run('template');
+            gulp.run('style');
+            gulp.run('media');
+        });
+    }
 });

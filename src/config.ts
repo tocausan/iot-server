@@ -6,9 +6,7 @@ export const Config = {
     title: 'iot-server',
     environment: 'dev',
     host:{
-        hostname: '',
         ip: '127.0.0.1',
-        os: '',
     },
     http: {
         port: 3000

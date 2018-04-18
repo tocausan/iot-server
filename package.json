@@ -8,7 +8,8 @@
     "pm2:restart": "pm2 restart ./build/app.js",
     "pm2:stop": "pm2 stop ./build/app.js",
     "build": "rimraf /build && gulp",
-    "dev": "concurrently --kill-others 'rimraf /build && gulp --env dev' 'nodemon'"
+    "dev": "concurrently --kill-others 'rimraf /build && gulp --env dev' 'nodemon'",
+    "prod": "TITLE='iot-server' HOST_IP='127.0.0.1' HTTP_PORT='80' SOCKET_PORT='443' PROD='true' npm run start"
   },
   "description": "IoT server for connected assets",
   "main": "./build/app",

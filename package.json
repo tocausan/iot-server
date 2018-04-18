@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node ./build/app",
     "pm2:start": "pm2 start ./build/app.js",
+    "pm2:restart": "pm2 restart ./build/app.js",
     "pm2:stop": "pm2 stop ./build/app.js",
     "build": "rimraf /build && gulp",
     "dev": "concurrently --kill-others 'npm run build' 'nodemon'"

@@ -1,0 +1,25 @@
+html,
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+body .header img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+

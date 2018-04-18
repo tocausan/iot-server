@@ -2,7 +2,8 @@
 
 import 'colors';
 import * as webSocket from 'ws';
-import {Config} from "../config";
+import * as url from 'url';
+import Config from "../config";
 import {Benchmark} from "./Benchmark";
 import WebSocket = require("ws");
 import {WebSocketMessage} from "./WebSocketMessage";
@@ -26,14 +27,13 @@ export class WebSocketServer {
         });
 
         server.on('connection', (socket: WebSocket) => {
-            socket.send(new WebSocketMessage().set('hello').stringify());
+            socket.send(new WebSocketMessage({message: 'hello'}).stringify());
 
             socket.on('message', (data: any) => {
-                const webSocketMessage = new WebSocketMessage().get(data).display();
+                const webSocketMessage = new WebSocketMessage(data).display();
                 exec(webSocketMessage.message, socket);
             });
         });
-
         return server;
     }
 }

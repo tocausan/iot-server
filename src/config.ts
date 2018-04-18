@@ -1,11 +1,12 @@
 'use strict';
 
 import * as path from "path";
+import {Benchmark} from "./models";
 
-export const Config = {
+const Config = {
     title: process.env.TITLE || 'iot-server',
     environment: process.env.PROD || 'dev',
-    host:{
+    host: {
         ip: process.env.HOST_IP || '127.0.0.1',
     },
     http: {
@@ -18,3 +19,12 @@ export const Config = {
         public: path.join(__dirname, '/public')
     }
 };
+
+const benchmark = new Benchmark(Config.title);
+benchmark.pushLine('environment', Config.environment, true);
+benchmark.pushLine('host-ip', Config.host.ip, true);
+benchmark.pushLine('http-port', Config.http.port.toString(), true);
+benchmark.pushLine('socket-port', Config.socket.port.toString(), true);
+benchmark.display();
+
+export default Config;

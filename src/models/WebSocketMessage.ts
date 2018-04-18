@@ -1,27 +1,20 @@
 'use strict';
 
 import 'colors';
-import {Config} from "../config";
+import Config from "../config";
 
 export class WebSocketMessage {
     source: string;
     message: any;
     status: boolean;
 
-    set(message: any, status?: boolean) {
-        this.source = Config.host.ip + ':' + Config.socket.port;
-        this.message = message;
-        this.status = status;
-        return this;
-    }
-
-    get(data: any) {
+    constructor(data: any) {
         let checkedData: any = data.data !== null && data.data !== undefined ? data.data : data;
         // receive websocket data
         if (typeof checkedData === 'string') checkedData = JSON.parse(checkedData);
 
         this.source = checkedData !== null && checkedData !== undefined && checkedData.source !== null && checkedData.source !== undefined ?
-            checkedData.source : '';
+            checkedData.source : Config.host.ip + ':' + Config.socket.port;
         this.message = checkedData !== null && checkedData !== undefined && checkedData.message !== null && checkedData.message !== undefined ?
             checkedData.message.data !== null && checkedData.message.data !== undefined ? checkedData.message.data : checkedData.message : '';
         this.status = checkedData !== null && checkedData !== undefined && checkedData.status !== null && checkedData.status !== undefined ? checkedData.status : true;

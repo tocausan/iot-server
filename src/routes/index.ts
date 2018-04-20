@@ -6,7 +6,7 @@ import {ErrorRoutes} from "./errors";
 export const Routes = Router()
 
     .get('/', (req: Request, res: Response, next: NextFunction) => {
-        res.sendFile(path.join(__dirname, '../views/index.html'));
+        res.render(path.join('index'), {name:'helloo'});
     })
 
     .use('/users', UserRoutes)

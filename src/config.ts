@@ -10,10 +10,10 @@ const Config = {
         ip: process.env.HOST_IP || '127.0.0.1',
     },
     http: {
-        port: parseInt(process.env.HTTP_PORT) || 3000
+        port: parseInt(process.env.HTTP_PORT) || 3100
     },
     socket: {
-        port: parseInt(process.env.SOCKET_PORT) || 3100
+        port: parseInt(process.env.SOCKET_PORT) || 3443
     },
     path: {
         public: path.join(__dirname, '/public')

@@ -8,8 +8,7 @@
     "pm2:restart": "pm2 restart ./build/app.js",
     "pm2:stop": "pm2 stop ./build/app.js",
     "build": "rimraf /build && gulp",
-    "dev": "concurrently --kill-others 'rimraf /build && gulp --env dev' 'nodemon'",
-    "prod": "PROD='true' pm2 restart ./build/app.js"
+    "dev": "concurrently --kill-others 'rimraf /build && gulp --env dev' 'nodemon'"
   },
   "description": "IoT server for connected assets",
   "main": "./build/app",
@@ -31,6 +30,7 @@
   "dependencies": {
     "@types/ws": "^4.0.2",
     "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.9",
     "express": "^4.16.3",
     "moment": "^2.22.1",
     "morgan": "^1.9.0",

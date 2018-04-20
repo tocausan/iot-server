@@ -2,13 +2,14 @@
 
 import 'colors';
 import * as webSocket from 'ws';
-import * as url from 'url';
 import Config from "../config";
 import {Benchmark} from "./Benchmark";
 import WebSocket = require("ws");
 import {WebSocketMessage} from "./WebSocketMessage";
 
 const benchmark: Benchmark = new Benchmark('WebSocketServer');
+
+const sockets: WebSocket[] = [];
 
 export class WebSocketServer {
     public port: number;
@@ -27,6 +28,9 @@ export class WebSocketServer {
         });
 
         server.on('connection', (socket: WebSocket) => {
+            //sockets.push(socket);
+            //console.log(sockets);
+
             socket.send(new WebSocketMessage({message: 'hello'}).stringify());
 
             socket.on('message', (data: any) => {

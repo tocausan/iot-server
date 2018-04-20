@@ -19,7 +19,4 @@ npm start
 
 # run dev mode
 npm run dev
-
-# run prod mode
-npm run dev
 ```
